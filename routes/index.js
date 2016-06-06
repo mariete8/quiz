@@ -9,6 +9,9 @@ router.get('/', function(req, res, next) {
 router.get('/author', function(req, res, next) {
   res.render('author');
 });
+router.get('/session',    sessionController.new);     // formulario login
+router.post('/session',   sessionController.create);  // crear sesión
+router.delete('/session', sessionController.destroy); // destruir sesión
 router.get('/question',quizController.question);
 router.get('/check',quizController.check);
 router.get('/quizzes.:format?', middlewares);
